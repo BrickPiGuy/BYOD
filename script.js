@@ -65,10 +65,10 @@ pollForm.addEventListener('submit', (event) => {
   }
 
   const messages = {
-    reuse: 'Great choice. Reuse now spans code, infrastructure, and model assets.',
-    correctness: 'Strong insight. AI-era correctness is increasingly probabilistic and monitored.',
-    scalability: 'Exactly. Cloud platforms transformed scalability from capacity to elasticity strategy.',
-    automation: 'Important point. Automation now includes autonomous and adaptive systems.'
+    identity: 'Strong first step. Identity and conditional access reduce risk before data reaches unmanaged contexts.',
+    containerization: 'Excellent choice. Containerization enforces clear boundaries between personal and corporate data planes.',
+    policy: 'Great governance lens. Transparency and consent are what make BYOD security sustainable over time.',
+    response: 'Important perspective. Rapid, selective incident response prevents escalation without overreaching on personal ownership.'
   };
 
   pollResult.textContent = messages[selected];

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BYOD Graduate Lecture: Evolving CS Definitions</title>
+    <title>BYOD Graduate Lecture: Balancing MDM and Device Ownership</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -18,7 +18,7 @@
     <header class="topbar" role="banner">
       <div>
         <p class="eyebrow">BYOD | Graduate Seminar</p>
-        <h1>Evolving Definitions in Computer Science</h1>
+        <h1>Balancing BYOD Convenience with MDM Security</h1>
       </div>
       <div class="topbar-controls">
         <button id="contrast-toggle" class="btn btn-contrast" aria-pressed="false">
@@ -28,150 +28,185 @@
     </header>
 
     <main class="deck" aria-live="polite">
-      <section class="slide active" data-title="Framing the Problem">
-        <h2>Framing the Problem</h2>
+      <section class="slide active" data-title="Problem Statement">
+        <h2>Problem Statement: BYOD and MDM in Tension</h2>
         <p>
-          Are computer science definitions fixed truths, or are they negotiated artifacts that shift as
-          technical practice changes? This lecture takes the position that most core definitions are
-          stable in intent yet fluid in operational meaning.
+          Bring-Your-Own-Device (BYOD) policies create convenience, mobility, and employee satisfaction,
+          but they also increase exposure risk because corporate data now lives on endpoints the company
+          does not own. Mobile Device Management (MDM) introduces control, auditability, and security
+          baselines, yet can feel intrusive when applied to personally owned phones, tablets, and
+          laptops.
         </p>
         <p>
-          We will examine this through concept drift across eras: from early procedural software to
-          object-oriented abstraction, from local infrastructure to cloud-native systems, and from
-          deterministic programs to probabilistic AI pipelines.
+          The central challenge for modern IT leadership is not choosing between BYOD and MDM. The real
+          challenge is designing a governance model where security controls are data-centric, transparent,
+          and proportionate to risk while preserving employee autonomy over personal assets.
         </p>
         <div class="callout">
-          <strong>Guiding thesis:</strong>
-          Definitions in CS are less like static dictionary entries and more like contracts updated by
-          tooling, scale, and socio-technical constraints.
+          <strong>Core question:</strong>
+          How do we protect enterprise data without functionally converting personal devices into
+          corporate-owned devices?
         </div>
       </section>
 
-      <section class="slide" data-title="Historical Vocabulary Shift">
-        <h2>Historical Vocabulary Shift: Subroutine -> Function -> Method</h2>
+      <section class="slide" data-title="Threat Model">
+        <h2>Threat Model for BYOD Environments</h2>
         <p>
-          In early programming, <em>subroutine</em> emphasized reusable instruction blocks and control
-          transfer. Its center of gravity was execution mechanics: jump, perform, return.
+          A mature BYOD strategy starts with threat modeling. Typical risks include data exfiltration via
+          unmanaged apps, credential theft from phishing and token replay, device loss or theft,
+          out-of-date operating systems, jailbroken/rooted devices, insecure public networks, and shadow
+          backup channels that leak sensitive information to consumer cloud services.
         </p>
         <p>
-          As languages matured, <em>function</em> foregrounded input-output mapping, composability, and
-          referential semantics. Later, <em>method</em> embedded behavior inside objects, reframing reuse
-          as collaboration among abstractions rather than mere code sharing.
-        </p>
-        <p>
-          The behavior existed in primitive form before the language shifted, but the definition
-          expanded with new expectations: modularity, testability, and design intent became part of
-          what the term implied.
+          The security posture must account for both accidental misuse and adversarial behavior. In
+          graduate-level governance terms, the risk surface is socio-technical: user decisions, platform
+          controls, identity architecture, legal obligations, and incident response capability all
+          interact.
         </p>
       </section>
 
-      <section class="slide" data-title="Interactive Concept Timeline">
-        <h2>Interactive Concept Timeline</h2>
-        <p>Select a period to compare what “reuse” meant in practice.</p>
-        <div class="timeline" role="tablist" aria-label="Code reuse timeline">
-          <button class="timeline-btn" role="tab" aria-selected="true" data-era="era1">1950s-1970s</button>
-          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era2">1980s-2000s</button>
-          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era3">2010s-Now</button>
+      <section class="slide" data-title="Interactive Control Models">
+        <h2>Interactive: Three BYOD Control Models</h2>
+        <p>Select a model to compare trade-offs in security depth versus user privacy.</p>
+        <div class="timeline" role="tablist" aria-label="BYOD control model selector">
+          <button class="timeline-btn" role="tab" aria-selected="true" data-era="era1">Light Touch</button>
+          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era2">Balanced</button>
+          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era3">Strict</button>
         </div>
         <article id="era1" class="era-panel active" role="tabpanel">
-          Reuse focused on reducing duplication in memory-constrained systems: shared routines, library
-          calls, and procedural decomposition.
+          <strong>Light Touch:</strong> Enforce identity controls and app-level protections, but avoid full
+          device enrollment. Best for low-risk data and high trust cultures. Lower friction, weaker
+          containment during incidents.
         </article>
         <article id="era2" class="era-panel" role="tabpanel">
-          Reuse became architectural: class hierarchies, interfaces, design patterns, and frameworks.
-          The question shifted from “Can we call this code?” to “Can teams evolve this system safely?”
+          <strong>Balanced:</strong> Use containerization, conditional access, and minimum compliance
+          baselines (encryption, PIN/biometric, patch level) while limiting telemetry to business context.
+          Usually the strongest practical model for mixed-risk organizations.
         </article>
         <article id="era3" class="era-panel" role="tabpanel">
-          Reuse now includes infrastructure and behavior templates: container images, IaC modules,
-          APIs, model checkpoints, and orchestration workflows spanning distributed platforms.
+          <strong>Strict:</strong> Full device enrollment with broad restrictions and remote controls.
+          Highest security confidence, but may reduce employee adoption and trigger legal/privacy concerns
+          in some jurisdictions.
         </article>
       </section>
 
-      <section class="slide" data-title="Cloud Computing">
-        <h2>Cloud Computing and Definition Drift</h2>
+      <section class="slide" data-title="Security Tooling Stack">
+        <h2>What Tools Should Be Used?</h2>
         <p>
-          Consider the term <em>scalability</em>. Historically, it often meant vertical hardware growth or
-          algorithmic efficiency. In cloud-native environments, scalability now includes elasticity,
-          autoscaling policy, failure domains, and cost-performance optimization under dynamic load.
+          Security should be layered, not delegated to one product category. A robust stack typically
+          includes Unified Endpoint Management (UEM/MDM), Mobile Application Management (MAM), Identity
+          and Access Management (IAM) with MFA and conditional access, Endpoint Detection and Response
+          (EDR) where feasible, Data Loss Prevention (DLP), CASB/SSE controls for cloud apps, certificate
+          management, and SIEM/SOAR for monitoring and response.
         </p>
         <p>
-          Likewise, <em>availability</em> no longer means simply “the server is running.” It is negotiated
-          through SLOs, multi-region replication, circuit breakers, chaos testing, and incident
-          response maturity.
-        </p>
-      </section>
-
-      <section class="slide" data-title="AI Systems">
-        <h2>AI Systems and Redefining Core Ideas</h2>
-        <p>
-          The concept of <em>program correctness</em> illustrates a major shift. In classical software,
-          correctness meant satisfying explicit logical specifications. In modern AI pipelines,
-          correctness often includes statistical reliability, calibration, fairness constraints,
-          drift tolerance, and monitoring over time.
-        </p>
-        <p>
-          In other words, the unit of meaning changed from a single deterministic artifact to an
-          evolving socio-technical system: data, model, serving layer, feedback loops, and governance.
+          Example implementations include Microsoft Intune with Entra Conditional Access and Defender,
+          VMware Workspace ONE with identity federation, or Jamf plus identity providers and SaaS DLP
+          integrations. Vendor selection matters less than architectural coherence and enforceable policy.
         </p>
       </section>
 
-      <section class="slide" data-title="What Stays Constant?">
-        <h2>What Actually Remains Constant?</h2>
-        <p>
-          Some invariants endure, but at a high level:
-        </p>
+      <section class="slide" data-title="Key Technical Controls">
+        <h2>Technical Controls to Protect Corporate Data</h2>
         <ul>
-          <li>Abstraction: hiding complexity behind stable interfaces.</li>
-          <li>Composition: building larger behavior from smaller units.</li>
-          <li>Trade-offs: performance, correctness, cost, and maintainability are always in tension.</li>
-          <li>Validation: claims still require evidence, even if evidence forms have changed.</li>
+          <li>Mandatory MFA and phishing-resistant methods for privileged roles.</li>
+          <li>Conditional access based on device compliance, user risk, location, and session risk.</li>
+          <li>Data segmentation through managed app containers and per-app VPN where needed.</li>
+          <li>Encryption at rest and in transit, with managed keys for business data contexts.</li>
+          <li>Copy/paste, save-as, and screen capture restrictions for sensitive app workflows.</li>
+          <li>Selective wipe of corporate profiles without factory reset of personal data.</li>
+          <li>Minimum OS version enforcement and automated patch compliance checks.</li>
+          <li>Root/jailbreak detection with immediate risk-based access reduction.</li>
         </ul>
+      </section>
+
+      <section class="slide" data-title="Policy and Process Design">
+        <h2>Policy Controls and Operational Processes</h2>
         <p>
-          These constants are methodological, not lexical. Terminology evolves because practice evolves.
+          A BYOD policy must define who can enroll, what data classes may be accessed, and under what
+          conditions access is granted, suspended, or revoked. It should include consent language,
+          acceptable use requirements, support boundaries, reimbursement terms if relevant, and explicit
+          disclosures about what IT can and cannot see on personal devices.
+        </p>
+        <p>
+          Process maturity is equally important: standardized onboarding, security awareness training,
+          continuous compliance audits, incident runbooks, legal review for jurisdictional privacy rules,
+          and clear offboarding workflows that trigger certificate revocation, session invalidation, and
+          selective corporate data removal.
         </p>
       </section>
 
-      <section class="slide" data-title="Critical Reflection">
-        <h2>Critical Reflection (Graduate-Level Position)</h2>
+      <section class="slide" data-title="Ownership and Privacy">
+        <h2>Respecting Device Ownership While Securing Data</h2>
         <p>
-          No concept in computer science is completely frozen in operational meaning. Even apparently
-          stable words like <em>algorithm</em>, <em>optimization</em>, or <em>automation</em> are reinterpreted by
-          hardware realities, organizational scale, regulation, and user impact. What remains constant
-          is the underlying intellectual project: formalizing processes, managing complexity, and
-          producing reliable outcomes under constraints.
+          The principle should be <em>control the data plane, not the personal plane</em>. In practice, this
+          means minimizing invasive telemetry, avoiding collection of personal content, and restricting
+          administrative actions to corporate containers and accounts wherever technically possible.
         </p>
         <p>
-          Therefore, definitions should be treated as historically situated tools. Their value lies not
-          in permanence but in explanatory power for current systems. A strong practitioner recognizes
-          both semantic continuity and contextual drift, using each term with awareness of its lineage
-          and modern implications.
+          Transparency is non-negotiable. Employees should receive plain-language disclosure of monitored
+          signals (for example: compliance state, corporate app inventory, security posture) and explicit
+          confirmation of excluded data (for example: personal photos, personal messages, personal email,
+          personal browser history).
+        </p>
+      </section>
+
+      <section class="slide" data-title="Incident Response for BYOD">
+        <h2>Incident Response and Legal Considerations</h2>
+        <p>
+          BYOD incident handling must be pre-negotiated before any breach occurs. Response playbooks
+          should define triage thresholds, forensic scope limits, evidence handling, business continuity,
+          employee notification standards, and escalation paths to legal, HR, and compliance teams.
+        </p>
+        <p>
+          The most fragile phase is account compromise on a personal endpoint. Effective response blends
+          identity containment (session revocation, token invalidation, step-up authentication) with
+          minimally invasive endpoint actions (selective wipe of corporate apps and secrets), preserving
+          both security and user trust.
         </p>
       </section>
 
       <section class="slide" data-title="Interactive Checkpoint">
         <h2>Interactive Checkpoint</h2>
         <p>
-          Which concept do you think has shifted the most in your own work context?
+          Which control area should be prioritized first when launching a BYOD program?
         </p>
-        <form id="checkpoint-form" class="poll" aria-label="Concept shift poll">
-          <label><input type="radio" name="concept" value="reuse" /> Code reuse</label>
-          <label><input type="radio" name="concept" value="correctness" /> Correctness</label>
-          <label><input type="radio" name="concept" value="scalability" /> Scalability</label>
-          <label><input type="radio" name="concept" value="automation" /> Automation</label>
-          <button class="btn" type="submit">Submit Reflection Choice</button>
+        <form id="checkpoint-form" class="poll" aria-label="BYOD priority poll">
+          <label><input type="radio" name="concept" value="identity" /> Identity and conditional access</label>
+          <label><input type="radio" name="concept" value="containerization" /> App/container data separation</label>
+          <label><input type="radio" name="concept" value="policy" /> Policy transparency and consent</label>
+          <label><input type="radio" name="concept" value="response" /> Incident response readiness</label>
+          <button class="btn" type="submit">Submit Priority Choice</button>
         </form>
         <p id="poll-result" class="feedback" aria-live="polite"></p>
       </section>
 
-      <section class="slide" data-title="Discussion Prompt">
-        <h2>Discussion Prompt for Seminar</h2>
+      <section class="slide" data-title="Implementation Blueprint">
+        <h2>Implementation Blueprint (90-Day Rollout)</h2>
         <p>
-          If definitions in CS evolve, then education and standards must evolve too. Should curricula
-          prioritize timeless theoretical cores, or should they continuously adapt terminology and
-          frameworks to current industrial practice?
+          <strong>Phase 1 (Weeks 1-3):</strong> classify data, define access tiers, draft consent language,
+          and finalize technical baseline controls.
         </p>
         <p>
-          Argue for one side, then identify the strongest criticism of your own position.
+          <strong>Phase 2 (Weeks 4-7):</strong> pilot with representative user groups, monitor policy impact,
+          and tune conditional access rules to reduce false positives and lockout risk.
+        </p>
+        <p>
+          <strong>Phase 3 (Weeks 8-12):</strong> broad rollout with training, metrics, and governance board
+          review for exceptions, incident trends, and usability outcomes.
+        </p>
+      </section>
+
+      <section class="slide" data-title="Seminar Prompt">
+        <h2>Graduate Discussion Prompt</h2>
+        <p>
+          Should BYOD security policy be primarily rights-based (maximize employee autonomy) or
+          risk-based (maximize institutional control)? Defend one position using technical, legal, and
+          organizational reasoning, then argue the strongest case against your own stance.
+        </p>
+        <p>
+          Your argument should address tooling choices, enforceability, cross-platform coverage,
+          proportionality of monitoring, and long-term trust between employees and the security function.
         </p>
       </section>
     </main>
@@ -179,7 +214,7 @@
     <footer class="controls" role="contentinfo">
       <button id="prev" class="btn" aria-label="Previous slide">Previous</button>
       <div class="status">
-        <span id="slide-counter">1 / 9</span>
+        <span id="slide-counter">1 / 11</span>
         <div class="progress" aria-hidden="true"><span id="progress-fill"></span></div>
       </div>
       <button id="next" class="btn" aria-label="Next slide">Next</button>
