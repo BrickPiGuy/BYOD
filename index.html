@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BYOD Graduate Lecture: Evolving CS Definitions</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="grain" aria-hidden="true"></div>
+
+    <header class="topbar" role="banner">
+      <div>
+        <p class="eyebrow">BYOD | Graduate Seminar</p>
+        <h1>Evolving Definitions in Computer Science</h1>
+      </div>
+      <div class="topbar-controls">
+        <button id="contrast-toggle" class="btn btn-contrast" aria-pressed="false">
+          Enable High Contrast
+        </button>
+      </div>
+    </header>
+
+    <main class="deck" aria-live="polite">
+      <section class="slide active" data-title="Framing the Problem">
+        <h2>Framing the Problem</h2>
+        <p>
+          Are computer science definitions fixed truths, or are they negotiated artifacts that shift as
+          technical practice changes? This lecture takes the position that most core definitions are
+          stable in intent yet fluid in operational meaning.
+        </p>
+        <p>
+          We will examine this through concept drift across eras: from early procedural software to
+          object-oriented abstraction, from local infrastructure to cloud-native systems, and from
+          deterministic programs to probabilistic AI pipelines.
+        </p>
+        <div class="callout">
+          <strong>Guiding thesis:</strong>
+          Definitions in CS are less like static dictionary entries and more like contracts updated by
+          tooling, scale, and socio-technical constraints.
+        </div>
+      </section>
+
+      <section class="slide" data-title="Historical Vocabulary Shift">
+        <h2>Historical Vocabulary Shift: Subroutine -> Function -> Method</h2>
+        <p>
+          In early programming, <em>subroutine</em> emphasized reusable instruction blocks and control
+          transfer. Its center of gravity was execution mechanics: jump, perform, return.
+        </p>
+        <p>
+          As languages matured, <em>function</em> foregrounded input-output mapping, composability, and
+          referential semantics. Later, <em>method</em> embedded behavior inside objects, reframing reuse
+          as collaboration among abstractions rather than mere code sharing.
+        </p>
+        <p>
+          The behavior existed in primitive form before the language shifted, but the definition
+          expanded with new expectations: modularity, testability, and design intent became part of
+          what the term implied.
+        </p>
+      </section>
+
+      <section class="slide" data-title="Interactive Concept Timeline">
+        <h2>Interactive Concept Timeline</h2>
+        <p>Select a period to compare what “reuse” meant in practice.</p>
+        <div class="timeline" role="tablist" aria-label="Code reuse timeline">
+          <button class="timeline-btn" role="tab" aria-selected="true" data-era="era1">1950s-1970s</button>
+          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era2">1980s-2000s</button>
+          <button class="timeline-btn" role="tab" aria-selected="false" data-era="era3">2010s-Now</button>
+        </div>
+        <article id="era1" class="era-panel active" role="tabpanel">
+          Reuse focused on reducing duplication in memory-constrained systems: shared routines, library
+          calls, and procedural decomposition.
+        </article>
+        <article id="era2" class="era-panel" role="tabpanel">
+          Reuse became architectural: class hierarchies, interfaces, design patterns, and frameworks.
+          The question shifted from “Can we call this code?” to “Can teams evolve this system safely?”
+        </article>
+        <article id="era3" class="era-panel" role="tabpanel">
+          Reuse now includes infrastructure and behavior templates: container images, IaC modules,
+          APIs, model checkpoints, and orchestration workflows spanning distributed platforms.
+        </article>
+      </section>
+
+      <section class="slide" data-title="Cloud Computing">
+        <h2>Cloud Computing and Definition Drift</h2>
+        <p>
+          Consider the term <em>scalability</em>. Historically, it often meant vertical hardware growth or
+          algorithmic efficiency. In cloud-native environments, scalability now includes elasticity,
+          autoscaling policy, failure domains, and cost-performance optimization under dynamic load.
+        </p>
+        <p>
+          Likewise, <em>availability</em> no longer means simply “the server is running.” It is negotiated
+          through SLOs, multi-region replication, circuit breakers, chaos testing, and incident
+          response maturity.
+        </p>
+      </section>
+
+      <section class="slide" data-title="AI Systems">
+        <h2>AI Systems and Redefining Core Ideas</h2>
+        <p>
+          The concept of <em>program correctness</em> illustrates a major shift. In classical software,
+          correctness meant satisfying explicit logical specifications. In modern AI pipelines,
+          correctness often includes statistical reliability, calibration, fairness constraints,
+          drift tolerance, and monitoring over time.
+        </p>
+        <p>
+          In other words, the unit of meaning changed from a single deterministic artifact to an
+          evolving socio-technical system: data, model, serving layer, feedback loops, and governance.
+        </p>
+      </section>
+
+      <section class="slide" data-title="What Stays Constant?">
+        <h2>What Actually Remains Constant?</h2>
+        <p>
+          Some invariants endure, but at a high level:
+        </p>
+        <ul>
+          <li>Abstraction: hiding complexity behind stable interfaces.</li>
+          <li>Composition: building larger behavior from smaller units.</li>
+          <li>Trade-offs: performance, correctness, cost, and maintainability are always in tension.</li>
+          <li>Validation: claims still require evidence, even if evidence forms have changed.</li>
+        </ul>
+        <p>
+          These constants are methodological, not lexical. Terminology evolves because practice evolves.
+        </p>
+      </section>
+
+      <section class="slide" data-title="Critical Reflection">
+        <h2>Critical Reflection (Graduate-Level Position)</h2>
+        <p>
+          No concept in computer science is completely frozen in operational meaning. Even apparently
+          stable words like <em>algorithm</em>, <em>optimization</em>, or <em>automation</em> are reinterpreted by
+          hardware realities, organizational scale, regulation, and user impact. What remains constant
+          is the underlying intellectual project: formalizing processes, managing complexity, and
+          producing reliable outcomes under constraints.
+        </p>
+        <p>
+          Therefore, definitions should be treated as historically situated tools. Their value lies not
+          in permanence but in explanatory power for current systems. A strong practitioner recognizes
+          both semantic continuity and contextual drift, using each term with awareness of its lineage
+          and modern implications.
+        </p>
+      </section>
+
+      <section class="slide" data-title="Interactive Checkpoint">
+        <h2>Interactive Checkpoint</h2>
+        <p>
+          Which concept do you think has shifted the most in your own work context?
+        </p>
+        <form id="checkpoint-form" class="poll" aria-label="Concept shift poll">
+          <label><input type="radio" name="concept" value="reuse" /> Code reuse</label>
+          <label><input type="radio" name="concept" value="correctness" /> Correctness</label>
+          <label><input type="radio" name="concept" value="scalability" /> Scalability</label>
+          <label><input type="radio" name="concept" value="automation" /> Automation</label>
+          <button class="btn" type="submit">Submit Reflection Choice</button>
+        </form>
+        <p id="poll-result" class="feedback" aria-live="polite"></p>
+      </section>
+
+      <section class="slide" data-title="Discussion Prompt">
+        <h2>Discussion Prompt for Seminar</h2>
+        <p>
+          If definitions in CS evolve, then education and standards must evolve too. Should curricula
+          prioritize timeless theoretical cores, or should they continuously adapt terminology and
+          frameworks to current industrial practice?
+        </p>
+        <p>
+          Argue for one side, then identify the strongest criticism of your own position.
+        </p>
+      </section>
+    </main>
+
+    <footer class="controls" role="contentinfo">
+      <button id="prev" class="btn" aria-label="Previous slide">Previous</button>
+      <div class="status">
+        <span id="slide-counter">1 / 9</span>
+        <div class="progress" aria-hidden="true"><span id="progress-fill"></span></div>
+      </div>
+      <button id="next" class="btn" aria-label="Next slide">Next</button>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
