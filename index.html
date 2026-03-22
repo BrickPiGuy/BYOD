@@ -28,11 +28,13 @@
     </header>
 
     <main class="deck" aria-live="polite">
-      <section class="slide active" data-title="Title Slide">
+      <section class="slide active title-slide" data-title="Title Slide">
         <h2>BYOD, MDM, and Enterprise Security Governance (2 min)</h2>
-        <p><strong>Joe Dwyer, PhD</strong></p>
-        <p>Associate Dean of Software Development</p>
-        <p>MSCS656 NMW2 Wireless, Mobile, and IoT Security</p>
+        <div class="presenter-meta">
+          <p><strong>Joe Dwyer, PhD</strong></p>
+          <p>Associate Dean of Software Development</p>
+          <p>MSCS656 NMW2 Wireless, Mobile, and IoT Security</p>
+        </div>
         <div class="callout">
           <strong>Session focus:</strong>
           Balancing corporate data protection with user autonomy in employee-owned devices.
@@ -42,8 +44,8 @@
       <section class="slide" data-title="60-Minute Roadmap">
         <h2>60-Minute Roadmap (2 min)</h2>
         <ul>
-          <li>0-5 min: framing and architecture assumptions.</li>
-          <li>5-20 min: threat model and identity-centric attack paths.</li>
+          <li>0-6 min: framing and architecture assumptions.</li>
+          <li>6-20 min: threat model and identity-centric attack paths.</li>
           <li>20-35 min: controls, trust signals, and data-tier mapping.</li>
           <li>35-45 min: legal, forensic, and ownership constraints.</li>
           <li>45-55 min: metrics, governance model choices, and implementation.</li>
@@ -67,7 +69,7 @@
       <section class="slide" data-title="BYOD Reference Architecture">
         <h2>Formal BYOD Trust Stack (Reference Architecture) (3 min)</h2>
         <ul>
-          <li>Device trust: posture, encryption state, patch level, attestation where available.</li>
+          <li>Device trust: posture, encryption state, patch level, and platform-dependent attestation where available.</li>
           <li>User identity trust: authentication strength, risk score, behavior context, token health.</li>
           <li>Application trust: managed app boundaries, app reputation, execution context.</li>
           <li>Network trust: channel security, network provenance, segmentation, session path controls.</li>
@@ -168,7 +170,7 @@
         <ul>
           <li>Certificate-based authentication and managed certificate lifecycle.</li>
           <li>Hardware-backed key custody: secure enclave, keystore, TPM.</li>
-          <li>Device attestation and mutual TLS for enterprise app channels.</li>
+          <li>Device attestation (platform-dependent, strongest when hardware-backed) and mutual TLS for enterprise app channels.</li>
           <li>Revocation speed and token invalidation as critical response metrics.</li>
           <li>Passkeys and phishing resistance for high-value identities.</li>
           <li>Key escrow and legal governance constraints.</li>
@@ -190,7 +192,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>Public</td>
+              <td>Corporate Public</td>
               <td>Allowed, browser or app</td>
               <td>Allowed</td>
               <td>Allowed</td>
@@ -222,7 +224,7 @@
       </section>
 
       <section class="slide" data-title="Technical Controls">
-        <h2>Technical Controls: Stronger Wording (3 min)</h2>
+        <h2>Technical Controls (3 min)</h2>
         <ul>
           <li>
             Phishing-resistant authentication should be mandatory for privileged roles and strongly
@@ -241,8 +243,8 @@
         <h2>Security Tooling for Corporate Data Protection (2 min)</h2>
         <p>
           Security should be layered, not delegated to one product category. A robust stack includes UEM,
-          MAM, IAM, conditional access, EDR where feasible, DLP, CASB/SSE, certificate lifecycle services,
-          and SIEM/SOAR analytics.
+          MAM, IAM, conditional access, EDR for laptops, mobile threat defense and app telemetry for
+          smartphones/tablets, DLP, CASB/SSE, certificate lifecycle services, and SIEM/SOAR analytics.
         </p>
         <p>
           MDM should be treated as one signal source among many. Real control comes from combining identity
@@ -354,7 +356,7 @@
               <td>COBO</td>
               <td>Lower personal flexibility</td>
               <td>Highest</td>
-              <td>Strongest</td>
+              <td>Generally strongest (subject to law and policy)</td>
               <td>Best for highly regulated workflows</td>
             </tr>
           </tbody>

@@ -122,6 +122,15 @@ li {
   border-radius: 8px;
 }
 
+.title-slide .presenter-meta {
+  margin: 0.8rem 0 1rem;
+}
+
+.title-slide .presenter-meta p {
+  text-align: center;
+  margin: 0.2rem 0;
+}
+
 .timeline {
   display: flex;
   flex-wrap: wrap;
