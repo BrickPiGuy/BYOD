@@ -162,6 +162,30 @@ li {
   margin-top: 0.75rem;
 }
 
+.matrix-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.matrix-table th,
+.matrix-table td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.6rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.matrix-table th {
+  background: #ebe8de;
+  font-weight: 600;
+}
+
+.matrix-table tr:nth-child(even) td {
+  background: rgba(255, 255, 255, 0.45);
+}
+
 .feedback {
   min-height: 1.5rem;
   color: var(--accent);
@@ -251,6 +275,13 @@ input:focus-visible {
   border-color: #777;
 }
 
+.high-contrast .matrix-table th,
+.high-contrast .matrix-table td {
+  border-color: #666;
+  background: #222;
+  color: var(--contrast-text);
+}
+
 .high-contrast .timeline-btn[aria-selected="true"],
 .high-contrast .btn {
   background: var(--contrast-accent);
@@ -265,6 +296,10 @@ input:focus-visible {
 @media (max-width: 720px) {
   .topbar {
     flex-direction: column;
+  }
+
+  .matrix-table {
+    font-size: 0.85rem;
   }
 
   .controls {
