@@ -29,7 +29,7 @@
 
     <main class="deck" aria-live="polite">
       <section class="slide active title-slide" data-title="Title Slide">
-        <h2>BYOD, MDM, and Enterprise Security Governance (2 min)</h2>
+        <h2>BYOD, MDM, and Enterprise Security Governance</h2>
         <div class="presenter-meta">
           <p><strong>Joe Dwyer, PhD</strong></p>
           <p>Associate Dean of Software Development</p>
@@ -42,7 +42,7 @@
       </section>
 
       <section class="slide" data-title="60-Minute Roadmap">
-        <h2>60-Minute Roadmap (2 min)</h2>
+        <h2>60-Minute Roadmap</h2>
         <ul>
           <li>0-6 min: framing and architecture assumptions.</li>
           <li>6-20 min: threat model and identity-centric attack paths.</li>
@@ -54,7 +54,7 @@
       </section>
 
       <section class="slide" data-title="Problem Statement">
-        <h2>Problem Statement: BYOD and MDM in Tension (2 min)</h2>
+        <h2>Problem Statement: BYOD and MDM in Tension</h2>
         <p>
           BYOD improves flexibility and user experience, but places corporate data on assets the
           organization does not own. MDM can add guardrails, yet broad endpoint control on personal
@@ -67,7 +67,7 @@
       </section>
 
       <section class="slide" data-title="BYOD Reference Architecture">
-        <h2>Formal BYOD Trust Stack (Reference Architecture) (3 min)</h2>
+        <h2>Formal BYOD Trust Stack (Reference Architecture)</h2>
         <ul>
           <li>Device trust: posture, encryption state, patch level, and platform-dependent attestation where available.</li>
           <li>User identity trust: authentication strength, risk score, behavior context, token health.</li>
@@ -86,7 +86,7 @@
       </section>
 
       <section class="slide" data-title="Zero Trust for BYOD">
-        <h2>Zero Trust Applied to BYOD (3 min)</h2>
+        <h2>Zero Trust Applied to BYOD</h2>
         <ul>
           <li>Continuous verification of identity, device posture, and session risk.</li>
           <li>Least privilege by role, data class, and task duration.</li>
@@ -102,7 +102,7 @@
       </section>
 
       <section class="slide" data-title="STRIDE Threat Modeling">
-        <h2>Formal Threat Modeling: STRIDE for BYOD (3 min)</h2>
+        <h2>Formal Threat Modeling: STRIDE for BYOD</h2>
         <p>
           Assets include corporate email, source code, customer records, tokens, and certificates. Actors
           include negligent users, insiders, opportunistic thieves, ransomware operators, and advanced
@@ -119,7 +119,7 @@
       </section>
 
       <section class="slide" data-title="Identity-Centric Attacks">
-        <h2>Deep Identity Attack Surface in BYOD (4 min)</h2>
+        <h2>Deep Identity Attack Surface in BYOD</h2>
         <ul>
           <li>Token theft and replay, including refresh token abuse.</li>
           <li>Adversary-in-the-middle phishing and session cookie theft.</li>
@@ -137,7 +137,7 @@
       </section>
 
       <section class="slide" data-title="SaaS Exfiltration">
-        <h2>Cloud and SaaS Exfiltration Paths (3 min)</h2>
+        <h2>Cloud and SaaS Exfiltration Paths</h2>
         <ul>
           <li>Personal cloud sync from unmanaged folders.</li>
           <li>Unmanaged browser sessions and session token persistence.</li>
@@ -152,7 +152,7 @@
       </section>
 
       <section class="slide" data-title="Platform Fragmentation">
-        <h2>Platform Fragmentation: BYOD Is Not One Problem (2 min)</h2>
+        <h2>Platform Fragmentation: BYOD Is Not One Problem</h2>
         <ul>
           <li>iOS and iPadOS: strong secure enclave patterns, constrained telemetry, mature app controls.</li>
           <li>Android Enterprise: work profile flexibility, variable vendor behavior across hardware.</li>
@@ -166,7 +166,7 @@
       </section>
 
       <section class="slide" data-title="Cryptographic Trust">
-        <h2>Cryptographic Trust and Key Management (2 min)</h2>
+        <h2>Cryptographic Trust and Key Management</h2>
         <ul>
           <li>Certificate-based authentication and managed certificate lifecycle.</li>
           <li>Hardware-backed key custody: secure enclave, keystore, TPM.</li>
@@ -179,7 +179,7 @@
       </section>
 
       <section class="slide" data-title="Data Classification Mapping">
-        <h2>Data Classification to Control Mapping (4 min)</h2>
+        <h2>Data Classification to Control Mapping</h2>
         <table class="matrix-table">
           <thead>
             <tr>
@@ -224,7 +224,7 @@
       </section>
 
       <section class="slide" data-title="Technical Controls">
-        <h2>Technical Controls (3 min)</h2>
+        <h2>Technical Controls</h2>
         <ul>
           <li>
             Phishing-resistant authentication should be mandatory for privileged roles and strongly
@@ -240,7 +240,7 @@
       </section>
 
       <section class="slide" data-title="Security Tooling Stack">
-        <h2>Security Tooling for Corporate Data Protection (2 min)</h2>
+        <h2>Security Tooling for Corporate Data Protection</h2>
         <p>
           Security should be layered, not delegated to one product category. A robust stack includes UEM,
           MAM, IAM, conditional access, EDR for laptops, mobile threat defense and app telemetry for
@@ -253,7 +253,7 @@
       </section>
 
       <section class="slide" data-title="Effectiveness vs Intrusiveness">
-        <h2>Control Effectiveness vs Privacy Intrusiveness (4 min)</h2>
+        <h2>Control Effectiveness vs Privacy Intrusiveness</h2>
         <p>
           Evaluate controls on a two-axis model: X-axis privacy intrusiveness, Y-axis security
           effectiveness. High-value controls often include phishing-resistant MFA, app protection policy,
@@ -271,7 +271,7 @@
       </section>
 
       <section class="slide" data-title="Policy and Process Design">
-        <h2>Policy Controls and Operational Processes (3 min)</h2>
+        <h2>Policy Controls and Operational Processes</h2>
         <p>
           Policy should define eligibility by role and data class, acceptable use, explicit consent,
           support boundaries, exception handling, and offboarding requirements. Processes should include
@@ -285,7 +285,7 @@
       </section>
 
       <section class="slide" data-title="Ownership and Privacy">
-        <h2>Respecting Device Ownership While Securing Data (2 min)</h2>
+        <h2>Respecting Device Ownership While Securing Data</h2>
         <p>
           The principle should be <em>control the data plane, not the personal plane</em>. This principle
           fails, however, when the organization cannot separate corporate data from personal workflows with
@@ -299,7 +299,7 @@
       </section>
 
       <section class="slide" data-title="Forensic Limitations">
-        <h2>Forensic and Incident Limits on Personal Endpoints (2 min)</h2>
+        <h2>Forensic and Incident Limits on Personal Endpoints</h2>
         <ul>
           <li>Limited artifact access and constrained chain of custody.</li>
           <li>Privacy boundaries and possible refusal of endpoint inspection.</li>
@@ -314,7 +314,7 @@
       </section>
 
       <section class="slide" data-title="Compliance and Jurisdiction">
-        <h2>Compliance, Labor, and Jurisdiction Constraints (2 min)</h2>
+        <h2>Compliance, Labor, and Jurisdiction Constraints</h2>
         <p>
           BYOD governance varies by labor law, privacy law, breach notification obligations, regulated data
           handling rules, litigation hold requirements, cross-border transfer constraints, and collective
@@ -326,7 +326,7 @@
       </section>
 
       <section class="slide" data-title="BYOD vs COPE vs COBO">
-        <h2>Decision Matrix: BYOD vs COPE vs COBO (2 min)</h2>
+        <h2>Decision Matrix: BYOD vs COPE vs COBO</h2>
         <table class="matrix-table">
           <thead>
             <tr>
@@ -365,7 +365,7 @@
       </section>
 
       <section class="slide" data-title="Program Metrics">
-        <h2>Metrics and KPIs for BYOD Program Effectiveness (2 min)</h2>
+        <h2>Metrics and KPIs for BYOD Program Effectiveness</h2>
         <ul>
           <li>Enrollment rate by role and business population.</li>
           <li>Successful logins from compliant or policy-constrained sessions.</li>
@@ -383,7 +383,7 @@
       </section>
 
       <section class="slide" data-title="Implementation Blueprint">
-        <h2>Implementation Blueprint (90-Day Rollout) (2 min)</h2>
+        <h2>Implementation Blueprint (90-Day Rollout)</h2>
         <p>
           <strong>Phase 1 (Weeks 1-3):</strong> classify data, define role-based access tiers, align legal
           terms, and establish minimum controls.
@@ -399,7 +399,7 @@
       </section>
 
       <section class="slide" data-title="Case Study Lab">
-        <h2>Case Study Mini-Lab (3 min)</h2>
+        <h2>Case Study Mini-Lab</h2>
         <p>
           Scenario: A developer accesses source code from a personal macOS device with consumer cloud sync
           enabled, then receives an impossible-travel alert and risky sign-in event from the same account.
@@ -416,7 +416,7 @@
       </section>
 
       <section class="slide" data-title="Interactive Checkpoint">
-        <h2>Interactive Checkpoint: First Priority Decision (1 min)</h2>
+        <h2>Interactive Checkpoint: First Priority Decision</h2>
         <p>Which control area should be prioritized first for a new BYOD rollout with limited budget?</p>
         <form class="poll checkpoint-form" data-mode="priority" data-result="priority-result" aria-label="BYOD priority poll">
           <label><input type="radio" name="choice" value="identity" /> Identity and conditional access</label>
@@ -429,7 +429,7 @@
       </section>
 
       <section class="slide" data-title="Emerging Issues">
-        <h2>Emerging Issues in BYOD Security (1 min)</h2>
+        <h2>Emerging Issues in BYOD Security</h2>
         <ul>
           <li>Generative AI data leakage from copy/paste into consumer assistants.</li>
           <li>Mobile passkeys and the rise of device-bound identity assurance.</li>
@@ -441,7 +441,7 @@
       </section>
 
       <section class="slide" data-title="Seminar Prompt">
-        <h2>Graduate Discussion Prompts (1 min)</h2>
+        <h2>Graduate Discussion Prompts</h2>
         <p>
           An organization allows executives, software developers, and HR staff to use BYOD under one
           shared policy. Argue why this is architecturally unsound. Design a role-sensitive governance
